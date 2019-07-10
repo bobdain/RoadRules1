@@ -1,0 +1,3 @@
+C:\Bob\GitHub\RoadRules\obj\Debug\RoadRules.njsprojAssemblyReference.cache
+C:\Bob\GitHub\RoadRules\obj\Debug\RoadRules.njsproj.CoreCompileInputs.cache
+C:\Bob\GitHub\RoadRules\bin\Microsoft.NodejsTools.WebRole.dll
