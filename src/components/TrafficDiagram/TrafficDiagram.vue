@@ -4,17 +4,45 @@
         <img src="../../assets/RoadRulesBackground.png" class="diagram" />
         <img src="../../assets/compass.png" class="compass" />
 
-        <img src="../../assets/LaneManeuversSample1.png"
-             :class="showManeuvers ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1A-Right.png" :class="this.showManeuver('1A-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1A-Straight.png" :class="this.showManeuver('1A-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1A-Left.png" :class="this.showManeuver('1A-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1A-U.png" :class="this.showManeuver('1A-U') ? 'overlay' : 'hidden'" />
 
-        <img src="../../assets/Overlay1A.png" :class="showManeuvers1A ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay1B.png" :class="showManeuvers1B ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay2A.png" :class="showManeuvers2A ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay2B.png" :class="showManeuvers2B ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay3A.png" :class="showManeuvers3A ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay3B.png" :class="showManeuvers3B ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay4A.png" :class="showManeuvers4A ? 'overlay' : 'hidden'" />
-        <img src="../../assets/Overlay4B.png" :class="showManeuvers4B ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1B-Right.png" :class="this.showManeuver('1B-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1B-Straight.png" :class="this.showManeuver('1B-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1B-Left.png" :class="this.showManeuver('1B-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver1B-U.png" :class="this.showManeuver('1B-U') ? 'overlay' : 'hidden'" />
+
+        <img src="../../assets/Maneuver2A-Right.png" :class="this.showManeuver('2A-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver2A-Straight.png" :class="this.showManeuver('2A-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver2A-Left.png" :class="this.showManeuver('2A-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver2A-U.png" :class="this.showManeuver('2A-U') ? 'overlay' : 'hidden'" />
+
+        <img src="../../assets/Maneuver2B-Right.png" :class="this.showManeuver('2B-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver2B-Straight.png" :class="this.showManeuver('2B-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver2B-Left.png" :class="this.showManeuver('2B-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver2B-U.png" :class="this.showManeuver('2B-U') ? 'overlay' : 'hidden'" />
+
+        <img src="../../assets/Maneuver3A-Right.png" :class="this.showManeuver('3A-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver3A-Straight.png" :class="this.showManeuver('3A-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver3A-Left.png" :class="this.showManeuver('3A-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver3A-U.png" :class="this.showManeuver('3A-U') ? 'overlay' : 'hidden'" />
+
+        <img src="../../assets/Maneuver3B-Right.png" :class="this.showManeuver('3B-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver3B-Straight.png" :class="this.showManeuver('3B-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver3B-Left.png" :class="this.showManeuver('3B-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver3B-U.png" :class="this.showManeuver('3B-U') ? 'overlay' : 'hidden'" />
+
+        <img src="../../assets/Maneuver4A-Right.png" :class="this.showManeuver('4A-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver4A-Straight.png" :class="this.showManeuver('4A-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver4A-Left.png" :class="this.showManeuver('4A-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver4A-U.png" :class="this.showManeuver('4A-U') ? 'overlay' : 'hidden'" />
+
+        <img src="../../assets/Maneuver4B-Right.png" :class="this.showManeuver('4B-Right') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver4B-Straight.png" :class="this.showManeuver('4B-Straight') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver4B-Left.png" :class="this.showManeuver('4B-Left') ? 'overlay' : 'hidden'" />
+        <img src="../../assets/Maneuver4B-U.png" :class="this.showManeuver('4B-U') ? 'overlay' : 'hidden'" />
 
         <label class="streetName streetName1a">
             {{street1}}
@@ -30,47 +58,83 @@
             {{street2}}
         </label>
 
-        <button class="carButton button1" v-on:click="selectLane1()"
-                @mouseover="showManeuvers1A = true" @mouseout="showManeuvers1A = false">
-            <img src="../../assets/RoadRulesCarGreen.png" class="car selectedCar" />
+        <button class="carButton button1" v-on:click="selectCar('1A')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '1A' ? 'selectedCar' : 'unselectedCar'" />
         </button>
-        <button class="carButton button2" v-on:click="selectLane2()"
-                @mouseover="showManeuvers1B = true" @mouseout="showManeuvers1B = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
-        </button>
-
-        <button class="carButton button3" v-on:click="selectRightLane1()"
-                @mouseover="showManeuvers2A = true" @mouseout="showManeuvers2A = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
-        </button>
-        <button class="carButton button4" v-on:click="selectRightLane2()"
-                @mouseover="showManeuvers2B = true" @mouseout="showManeuvers2B = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
+        <button class="carButton button2" v-on:click="selectCar('1B')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '1B' ? 'selectedCar' : 'unselectedCar'" />
         </button>
 
-        <button class="carButton button5" v-on:click="selectOncomingLane1()"
-                @mouseover="showManeuvers3A = true" @mouseout="showManeuvers3A = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
+        <button class="carButton button3" v-on:click="selectCar('2A')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '2A' ? 'selectedCar' : 'unselectedCar'" />
         </button>
-        <button class="carButton button6" v-on:click="selectOncomingLane2()"
-                @mouseover="showManeuvers3B = true" @mouseout="showManeuvers3B = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
-        </button>
-
-        <button class="carButton button7" v-on:click="selectLeftLane1()"
-                @mouseover="showManeuvers4A = true" @mouseout="showManeuvers4A = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
-        </button>
-        <button class="carButton button8" v-on:click="selectLeftLane2()"
-                @mouseover="showManeuvers4B = true" @mouseout="showManeuvers4B = false">
-            <img src="../../assets/RoadRulesCarRed.png" class="car unselectedCar" />
+        <button class="carButton button4" v-on:click="selectCar('2B')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '2B' ? 'selectedCar' : 'unselectedCar'" />
         </button>
 
-        <div class="showManeuverButtons">
-            <v-btn color="blue" class="rrButton" v-on:click="toggleShowManeuvers()">
-                Show allowed maneuvers
+        <button class="carButton button5" v-on:click="selectCar('3A')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '3A' ? 'selectedCar' : 'unselectedCar'" />
+        </button>
+        <button class="carButton button6" v-on:click="selectCar('3B')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '3B' ? 'selectedCar' : 'unselectedCar'" />
+        </button>
+
+        <button class="carButton button7" v-on:click="selectCar('4A')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '4A' ? 'selectedCar' : 'unselectedCar'" />
+        </button>
+        <button class="carButton button8" v-on:click="selectCar('4B')">
+            <img src="../../assets/RoadRulesCarGreen.png"
+                 :class="selectedLane == '4B' ? 'selectedCar' : 'unselectedCar'" />
+        </button>
+
+        <div class="saveButton">
+            <v-btn color="blue" class="rrButton">
+                Save
             </v-btn>
         </div>
+
+        <button class="arrowButton1A" v-on:click="onArrowButton('1A')">
+            <img src="../../assets/Arrow.png"
+                 :class="enableArrowsInALanes ? 'arrowDown' : 'arrowDown arrowDisable'" />
+        </button>
+        <button class="arrowButton1B" v-on:click="onArrowButton('1B')">
+            <img src="../../assets/Arrow.png"
+                 :class="!enableArrowsInALanes ? 'arrowDown' : 'arrowDown arrowDisable'" />
+        </button>
+
+        <button class="arrowButton2A" v-on:click="onArrowButton('2A')">
+            <img src="../../assets/Arrow.png"
+                 :class="enableArrowsInALanes ? 'arrowRight' : 'arrowRight arrowDisable'" />
+        </button>
+        <button class="arrowButton2B" v-on:click="onArrowButton('2B')">
+            <img src="../../assets/Arrow.png"
+                 :class="!enableArrowsInALanes ? 'arrowRight' : 'arrowRight arrowDisable'" />
+        </button>
+
+        <button class="arrowButton3A" v-on:click="onArrowButton('3A')">
+            <img src="../../assets/Arrow.png"
+                 :class="enableArrowsInALanes ? 'arrowUp' : 'arrowUp arrowDisable'" />
+        </button>
+        <button class="arrowButton3B" v-on:click="onArrowButton('3B')">
+            <img src="../../assets/Arrow.png"
+                 :class="!enableArrowsInALanes ? 'arrowUp' : 'arrowUp arrowDisable'" />
+        </button>
+
+        <button class="arrowButton4A" v-on:click="onArrowButton('4A')">
+            <img src="../../assets/Arrow.png"
+                 :class="enableArrowsInALanes ? 'arrowLeft' : 'arrowLeft arrowDisable'" />
+        </button>
+        <button class="arrowButton4B" v-on:click="onArrowButton('4B')">
+            <img src="../../assets/Arrow.png"
+                 :class="!enableArrowsInALanes ? 'arrowLeft' : 'arrowLeft arrowDisable'" />
+        </button>
     </div>
 </template>
 
@@ -86,54 +150,171 @@
                 carImage1: "../../assets/RoadRulesCarGreen.png",
                 street1: "First",
                 street2: "Main",
-                showManeuvers: false,
-                showManeuvers1A: false,
-                showManeuvers1B: false,
-                showManeuvers2A: false,
-                showManeuvers2B: false,
-                showManeuvers3A: false,
-                showManeuvers3B: false,
-                showManeuvers4A: false,
-                showManeuvers4B: false,
+                selectedLane: "1A",
+                enableArrowsInALanes: true,
+                selectedManeuvers: [],
             }
         },
 
         methods: {
-            toggleShowManeuvers() {
-                this.showManeuvers = !this.showManeuvers;
+            selectCar(lane) {
+                this.selectedLane = lane;
+                this.enableArrowsInALanes = lane.includes("A");
             },
-            selectLane1() {
-                // eslint-disable-next-line
-                console.log('Lane ONE selected');
+
+            toggleManeuver(maneuver) {
+                let index = this.selectedManeuvers.indexOf(maneuver);
+
+                if (index == -1) {
+                    this.selectedManeuvers.push(maneuver);
+                }
+                else {
+                    this.selectedManeuvers.splice(index, 1);
+                }
             },
-            selectLane2() {
-                // eslint-disable-next-line
-                console.log('Lane TWO selected');
+
+            showManeuver(maneuver) {
+                return maneuver.includes(this.selectedLane) &&
+                    this.selectedManeuvers.includes(maneuver);
             },
-            selectRightLane1() {
-                // eslint-disable-next-line
-                console.log('RIGHT Lane ONE selected');
-            },
-            selectRightLane2() {
-                // eslint-disable-next-line
-                console.log('RIGHT Lane TWO selected');
-            },
-            selectOncomingLane1() {
-                // eslint-disable-next-line
-                console.log('ONCOMING Lane ONE selected');
-            },
-            selectOncomingLane2() {
-                // eslint-disable-next-line
-                console.log('ONCOMING Lane TWO selected');
-            },
-            selectLeftLane1() {
-                // eslint-disable-next-line
-                console.log('LEFT Lane ONE selected');
-            },
-            selectLeftLane2() {
-                // eslint-disable-next-line
-                console.log('LEFT Lane TWO selected');
-            },
+
+            onArrowButton(targetLane) {
+                // disabled arrows do nothing
+                if (targetLane.charAt(1) != this.selectedLane.charAt(1)) {
+                    return;
+                }
+
+                switch (this.selectedLane) {
+                    case "1A":
+                        switch (targetLane) {
+                            case "2A":
+                                this.toggleManeuver("1A-Right");
+                                break;
+                            case "3A":
+                                this.toggleManeuver("1A-Straight");
+                                break;
+                            case "4A":
+                                this.toggleManeuver("1A-Left");
+                                break;
+                            case "1A":
+                                this.toggleManeuver("1A-U");
+                                break;
+                        }
+                        break;
+                    case "1B":
+                        switch (targetLane) {
+                            case "2B":
+                                this.toggleManeuver("1B-Right");
+                                break;
+                            case "3B":
+                                this.toggleManeuver("1B-Straight");
+                                break;
+                            case "4B":
+                                this.toggleManeuver("1B-Left");
+                                break; 
+                            case "1B":
+                                this.toggleManeuver("1B-U");
+                                break; 
+                        }
+                        break;
+                    case "2A":
+                        switch (targetLane) {
+                            case "3A":
+                                this.toggleManeuver("2A-Right");
+                                break;
+                            case "4A":
+                                this.toggleManeuver("2A-Straight");
+                                break;
+                            case "1A":
+                                this.toggleManeuver("2A-Left");
+                                break;
+                            case "2A":
+                                this.toggleManeuver("2A-U");
+                                break;
+                        }
+                        break;
+                    case "2B":
+                        switch (targetLane) {
+                            case "3B":
+                                this.toggleManeuver("2B-Right");
+                                break;
+                            case "4B":
+                                this.toggleManeuver("2B-Straight");
+                                break;
+                            case "1B":
+                                this.toggleManeuver("2B-Left");
+                                break;
+                            case "2B":
+                                this.toggleManeuver("2B-U");
+                                break;
+                        }
+                        break;
+                    case "3A":
+                        switch (targetLane) {
+                            case "4A":
+                                this.toggleManeuver("3A-Right");
+                                break;
+                            case "1A":
+                                this.toggleManeuver("3A-Straight");
+                                break;
+                            case "2A":
+                                this.toggleManeuver("3A-Left");
+                                break;
+                            case "3A":
+                                this.toggleManeuver("3A-U");
+                                break;
+                        }
+                        break;
+                    case "3B":
+                        switch (targetLane) {
+                            case "4B":
+                                this.toggleManeuver("3B-Right");
+                                break;
+                            case "1B":
+                                this.toggleManeuver("3B-Straight");
+                                break;
+                            case "2B":
+                                this.toggleManeuver("3B-Left");
+                                break;
+                            case "3B":
+                                this.toggleManeuver("3B-U");
+                                break;
+                        }
+                        break;
+                    case "4A":
+                        switch (targetLane) {
+                            case "1A":
+                                this.toggleManeuver("4A-Right");
+                                break;
+                            case "2A":
+                                this.toggleManeuver("4A-Straight");
+                                break;
+                            case "3A":
+                                this.toggleManeuver("4A-Left");
+                                break;
+                            case "4A":
+                                this.toggleManeuver("4A-U");
+                                break;
+                        }
+                        break;
+                    case "4B":
+                        switch (targetLane) {
+                            case "1B":
+                                this.toggleManeuver("4B-Right");
+                                break;
+                            case "2B":
+                                this.toggleManeuver("4B-Straight");
+                                break;
+                            case "3B":
+                                this.toggleManeuver("4B-Left");
+                                break;
+                            case "4B":
+                                this.toggleManeuver("4B-U");
+                                break;
+                        }
+                        break;
+                }
+            }
         }
     };
 </script>
@@ -197,10 +378,12 @@
     }
 
     .selectedCar {
-        opacity: 1.0;
+       height: 70px;
+       opacity: 1.0;
     }
 
     .unselectedCar {
+        height: 70px;
         opacity: 0.2;
     }
 
@@ -251,7 +434,66 @@
         left: 115px;
         transform: rotate(90deg);
     }
-    .showManeuverButtons {
-        margin-left: 170px;
+    .saveButton {
+        margin-top: 40px;
+        margin-left: 255px;
+    }
+    .arrowDisable {
+        opacity: 0.2;
+    }
+    .arrowRight {
+        height: 35px;
+        transform: rotate(180deg);
+    }
+    .arrowLeft {
+        height: 35px;
+    }
+    .arrowUp {
+        height: 35px;
+        transform: rotate(90deg);
+    }
+    .arrowDown {
+        height: 35px;
+        transform: rotate(-90deg);
+    }
+    .arrowButton1A {
+        position: absolute;
+        top: 470px;
+        left: 250px;
+    }
+    .arrowButton1B {
+        position: absolute;
+        top: 470px;
+        left: 192px;
+    }
+    .arrowButton2A {
+        position: absolute;
+        top: 315px;
+        left: 470px;
+    }
+    .arrowButton2B {
+        position: absolute;
+        top: 373px;
+        left: 470px;
+    }
+    .arrowButton3A {
+        position: absolute;
+        top: 90px;
+        left: 317px;
+    }
+    .arrowButton3B {
+        position: absolute;
+        top: 90px;
+        left: 372px;
+    }
+    .arrowButton4A {
+        position: absolute;
+        top: 250px;
+        left: 95px;
+    }
+    .arrowButton4B {
+        position: absolute;
+        top: 190px;
+        left: 95px;
     }
 </style>
